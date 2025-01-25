@@ -6,16 +6,16 @@ const body = document.querySelector("body");
 const darkModeButton = document.querySelector("#darkModeButton")
 
 hamburgerMenu.addEventListener("click", () => {
-	closeMenu();
+	toggleMenu();
 });
 
 hLinks.forEach((link) => {
 	link.addEventListener("click", () => {
-		closeMenu();
+		toggleMenu();
 	});
 });
 
-const closeMenu = () => {
+const toggleMenu = () => {
 	menu.classList.toggle("hidden");
 	hamburgerLine.forEach((line) => {
 		line.classList.toggle("bg-white");
