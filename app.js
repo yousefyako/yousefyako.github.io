@@ -29,3 +29,10 @@ darkModeButton.addEventListener("click", () => {
 const toggleDarkMode = () => {
 	body.classList.toggle("dark")
 }
+
+// use the users preferred theme based on device
+body.classList.toggle(
+	"dark",
+	localStorage.currentTheme === "dark" ||
+	  (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+  );

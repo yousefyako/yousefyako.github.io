@@ -380,7 +380,7 @@
     --spacing-big: 48rem;
     --font-nunito: "Nunito", sans-serif;
     --animate-open-menu: open-menu 0.5s ease-in-out forwards;
-    --animate-close-menu: close-menu 0.5s ease-in-out forwards;
+    --animate-close-menu: close-menu 0.5s ease-in-out;
   }
 }
 @layer base {
@@ -1030,9 +1030,6 @@
   }
   .transform-none {
     transform: none;
-  }
-  .animate-close-menu {
-    animation: var(--animate-close-menu);
   }
   .animate-none {
     animation: none;
@@ -2610,6 +2607,28 @@
     }
   }
 }
+@keyframes open-menu {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes close-menu {
+  0% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: scaleY(1.2);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -2634,28 +2653,6 @@
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-@keyframes open-menu {
-  0% {
-    transform: scaleY(0);
-  }
-  80% {
-    transform: scaleY(1.2);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-@keyframes close-menu {
-  0% {
-    transform: scaleY(1);
-  }
-  20% {
-    transform: scaleY(1.2);
-  }
-  100% {
-    transform: scaleY(0);
   }
 }
 @property --tw-translate-x {
