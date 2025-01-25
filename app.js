@@ -3,6 +3,7 @@ const hamburgerLine = document.querySelectorAll(".hamburgerLine");
 const menu = document.querySelector("#menu");
 const hLinks = document.querySelectorAll("#hLink");
 const body = document.querySelector("body");
+const darkModeButton = document.querySelector("#darkModeButton")
 
 hamburgerMenu.addEventListener("click", () => {
 	closeMenu();
@@ -20,3 +21,11 @@ const closeMenu = () => {
 		line.classList.toggle("bg-white");
 	});
 };
+
+darkModeButton.addEventListener("click", () => {
+	toggleDarkMode();
+})
+
+const toggleDarkMode = () => {
+	body.classList.toggle("dark")
+}

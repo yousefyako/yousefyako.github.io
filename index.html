@@ -7,24 +7,25 @@
 			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
 			rel="stylesheet"
 		/>
-		<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+		<link href="./src/output.css" rel="stylesheet">
 		<title>Yousef Yako</title>
 	</head>
 	<body class="h-screen font-nunito">
-		<div class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200">
+		<div class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden">
 			<!-- navbar -->
-			<nav class="w-full px-3 fixed top-0 bg-white z-10">
+			<nav class="w-full px-3 fixed top-0 bg-white dark:bg-slate-800 z-10">
 				<div
 					class="container mx-auto py-5 flex justify-between items-center"
 				>
 					<div class="flex items-center">
-						<span class="text-2xl font-bold text-indigo-900"
+						<span class="text-2xl font-bold text-indigo-900 dark:text-white"
 							>Yousef Yako</span
 						>
 					</div>
+
+					<!-- top menu-->
 					<ul
-						class="hidden md:flex space-x-10 text-gray-600 font-bold text-sm uppercase"
-					>
+						class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm uppercase">
 						<li class="hover:text-gray-400">
 							<a href="#">homepage</a>
 						</li>
@@ -41,41 +42,43 @@
 							<a href="#contact">contact me</a>
 						</li>
 					</ul>
-					<img
+					<div class="flex items-center gap-5">
+						<img
+						id="darkModeButton"
 						src="img/dark_mode.png"
-						class="hidden md:block w-10 cursor-pointer"
+						class="w-10 cursor-pointer"
 						alt=""
-					/>
-					<div
-						id="hamburger"
-						class="space-y-1 md:hidden cursor-pointer z-20"
-					>
-						<div class="hamburgerLine w-6 h-0.5 bg-black"></div>
-						<div class="hamburgerLine w-6 h-0.5 bg-black"></div>
-						<div class="hamburgerLine w-6 h-0.5 bg-black"></div>
+						/>
+						<div
+							id="hamburger"
+							class="space-y-1 md:hidden cursor-pointer z-20">
+							<div class="hamburgerLine w-6 h-0.5 bg-black dark:bg-white"></div>
+							<div class="hamburgerLine w-6 h-0.5 bg-black dark:bg-white"></div>
+							<div class="hamburgerLine w-6 h-0.5 bg-black dark:bg-white"></div>
+						</div>
+
+						<!-- hamburger menu -->
+						<ul
+							id="menu"
+							class="hidden bg-indigo-900 dark:bg-slate-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
+							<li>
+								<a id="hLink" href="#">Homepage</a>
+							</li>
+							<li>
+								<a id="hLink" href="#about">About Me</a>
+							</li>
+							<li>
+								<a id="hLink" href="#skills">Skills</a>
+							</li>
+							<li>
+								<a id="hLink" href="#documents">Documents</a>
+							</li>
+							<li>
+								<a id="hLink" href="#contact">Contact Me</a>
+							</li>
+						</ul>
 					</div>
 
-					<!-- hamburger menu -->
-					<ul
-						id="menu"
-						class="hidden bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center"
-					>
-						<li>
-							<a id="hLink" href="#">Homepage</a>
-						</li>
-						<li>
-							<a id="hLink" href="#about">About Me</a>
-						</li>
-						<li>
-							<a id="hLink" href="#skills">Skills</a>
-						</li>
-						<li>
-							<a id="hLink" href="#documents">Documents</a>
-						</li>
-						<li>
-							<a id="hLink" href="#contact">Contact Me</a>
-						</li>
-					</ul>
 				</div>
 			</nav>
 
@@ -83,13 +86,13 @@
 			<div
 				class="absolute top-1/3 left-5 text-xl sm:left-10 sm:text-4xl md:left-1/4 md:text-6xl lg:left-5 xl:left-20 xl:text-7xl font-bold"
 			>
-				<span class="text-gray-600">Hello, I'm a</span>
+				<span class="text-gray-600 dark:text-white">Hello, I'm a</span>
 				<p id="autotext" class="text-red-700"></p>
 			</div>
 
 			<!-- about me card -->
 			<div
-				class="hidden lg:flex flex-col gap-5 rounded-md shadow-lg absolute top-0 bottom-0 m-auto right-10 bg-white p-6 h-fit w-1/3"
+				class="hidden lg:flex flex-col gap-5 rounded-md shadow-lg absolute top-0 bottom-0 m-auto right-10 bg-white dark:bg-slate-900 dark:shadow-slate-800 p-6 h-fit w-1/3"
 			>
 				<h1 class="text-4xl font-bold text-indigo-900">
 					Hi, I'm Yousef
@@ -108,7 +111,7 @@
 		</div>
 
 		<!-- about me section -->
-		<div id="about" class="pt-40">
+		<div id="about" class="pt-40 dark:bg-slate-900">
 			<div
 				class="container mx-auto px-10 flex flex-col-reverse lg:flex-row items-center gap-20"
 			>
@@ -142,7 +145,7 @@
 					<h2 class="text-gray-400 font-medium">Responsibility</h2>
 					<div class="w-full bg-gray-200 h-1.5 rounded-md">
 						<div
-							class="w-8/10 bg-indigo-600 h-1.5 rounded-md"
+							class="w-9/10 bg-indigo-600 h-1.5 rounded-md"
 						></div>
 					</div>
 				</div>
@@ -150,12 +153,12 @@
 		</div>
 
 		<!-- skills -->
-		<div id="skills" class="pt-40">
+		<div id="skills" class="pt-40 dark:bg-slate-900">
 			<div class="container mx-auto">
 				<!-- top -->
 				<div class="flex flex-col gap-3 items-center">
 					<h1 class="text-indigo-600 font-bold">SKILLS</h1>
-					<h1 class="text-3xl">These are my skills</h1>
+					<h1 class="text-3xl dark:text-white">These are my skills</h1>
 				</div>
 				<!-- bottom -->
 				<div class="p-5 sm:p-0 flex flex-wrap">
@@ -164,7 +167,7 @@
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 flex-col gap-3"
 					>
 						<img class="w-10" src="/img/skills.png" alt="" />
-						<h1 class="font-medium text-lg">Web Development</h1>
+						<h1 class="font-medium text-lg dark:text-white">Web Development</h1>
 						<p class="text-gray-400">
 							HTML | CSS | React | Bootstrap | Tailwind | NodeJs |
 							ExpressJs | Handlebars
@@ -175,7 +178,7 @@
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 flex-col gap-3"
 					>
 						<img class="w-10" src="/img/skills.png" alt="" />
-						<h1 class="font-medium text-lg">Penetration Testing</h1>
+						<h1 class="font-medium text-lg dark:text-white">Penetration Testing</h1>
 						<p class="text-gray-400">
 							Linux | Windows | Nmap | Kali | Metasploit |
 							Shodan.io | & much more...
@@ -186,7 +189,7 @@
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 flex-col gap-3"
 					>
 						<img class="w-10" src="/img/skills.png" alt="" />
-						<h1 class="font-medium text-lg">Tools & DB</h1>
+						<h1 class="font-medium text-lg dark:text-white">Tools & DB</h1>
 						<p class="text-gray-400">
 							Git | GitHub | SQL, NoSQL & SQLite | MongoDB |
 							Postman | Docker
@@ -197,7 +200,7 @@
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 flex-col gap-3"
 					>
 						<img class="w-10" src="/img/skills.png" alt="" />
-						<h1 class="font-medium text-lg">Risk Management</h1>
+						<h1 class="font-medium text-lg dark:text-white">Risk Management</h1>
 						<p class="text-gray-400">NIST CSF | ISO 27000 series</p>
 					</div>
 					<!-- card -->
@@ -205,7 +208,7 @@
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 flex-col gap-3"
 					>
 						<img class="w-10" src="/img/skills.png" alt="" />
-						<h1 class="font-medium text-lg">
+						<h1 class="font-medium text-lg dark:text-white">
 							App/Mobile Development
 						</h1>
 						<p class="text-gray-400">
@@ -217,7 +220,7 @@
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 flex-col gap-3"
 					>
 						<img class="w-10" src="/img/skills.png" alt="" />
-						<h1 class="font-medium text-lg">
+						<h1 class="font-medium text-lg dark:text-white">
 							Programming Languages
 						</h1>
 						<p class="text-gray-400">
@@ -230,12 +233,12 @@
 		</div>
 
 		<!-- documents -->
-		<div id="documents" class="pt-40">
+		<div id="documents" class="pt-40 dark:bg-slate-900">
 			<div class="container mx-auto">
 				<!-- top -->
 				<div class="flex flex-col gap-3 items-center">
 					<h1 class="text-indigo-600 font-bold">DOCUMENTS</h1>
-					<h1 class="text-3xl">These are my documents</h1>
+					<h1 class="text-3xl dark:text-white">These are my documents</h1>
 					<p class="text-center text-gray-400">
 						Below are some of my documents that are available for
 						download!
@@ -247,42 +250,42 @@
 					<div
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 items-center justify-between"
 					>
-						<h1 class="font-medium text-lg">CV</h1>
+						<h1 class="font-medium text-lg dark:text-white">CV</h1>
 						<a
 							class="flex-shrink-0"
 							href="/files/Yousef-Yako-FlowCV.pdf"
 							download="Yousef_Yako_CV.pdf"
 						>
-							<img class="w-7" src="/img/download.png" alt="" />
+							<img class="w-7 dark:invert" src="/img/download.png" alt="" />
 						</a>
 					</div>
 					<!-- document -->
 					<div
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 items-center justify-between"
 					>
-						<h1 class="font-medium text-lg">
+						<h1 class="font-medium text-lg dark:text-white">
 							Degree of Bachelor of Computer Science
 						</h1>
 						<a class="flex-shrink-0" href="">
-							<img class="w-7" src="/img/download.png" alt="" />
+							<img class="w-7 dark:invert" src="/img/download.png" alt="" />
 						</a>
 					</div>
 					<!-- document -->
 					<div
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 items-center justify-between"
 					>
-						<h1 class="font-medium text-lg">
+						<h1 class="font-medium text-lg dark:text-white">
 							Transcript of Records
 						</h1>
 						<a class="flex-shrink-0" href="">
-							<img class="w-7" src="/img/download.png" alt="" />
+							<img class="w-7 dark:invert" src="/img/download.png" alt="" />
 						</a>
 					</div>
 					<!-- document -->
 					<div
 						class="w-full md:w-8/12 xl:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 items-center justify-between"
 					>
-						<h1 class="font-medium text-lg">
+						<h1 class="font-medium text-lg dark:text-white">
 							Certificate of Completion in Ethical Hacking and
 							Penetration Testing
 						</h1>
@@ -291,20 +294,20 @@
 							href="/files/THM certifikat.pdf"
 							download="Yousef_Yako_Hacking_Certificate.pdf"
 						>
-							<img class="w-7" src="/img/download.png" alt="" />
+							<img class="w-7 dark:invert" src="/img/download.png" alt="" />
 						</a>
 					</div>
 					<!-- document -->
 					<div
 						class="w-full md:w-4/12 shadow-xl rounded-lg p-5 flex my-3 md:my-10 items-center justify-between"
 					>
-						<h1 class="font-medium text-lg">Bachelor Thesis</h1>
+						<h1 class="font-medium text-lg dark:text-white">Bachelor Thesis</h1>
 						<a
 							class="flex-shrink-0"
 							href="/files/bachelor thesis.pdf"
 							download="Yousef_Yako_Bachelor_Thesis.pdf"
 						>
-							<img class="w-7" src="/img/download.png" alt="" />
+							<img class="w-7 dark:invert" src="/img/download.png" alt="" />
 						</a>
 					</div>
 				</div>
@@ -312,12 +315,12 @@
 		</div>
 
 		<!-- contact -->
-		<div id="contact" class="pt-40">
+		<div id="contact" class="pt-40 dark:bg-slate-900">
 			<div class="container mx-auto">
 				<!-- top -->
 				<div class="flex flex-col gap-3 items-center">
 					<h1 class="text-indigo-600 font-bold">CONTACT ME</h1>
-					<h1 class="text-3xl">Get In Touch!</h1>
+					<h1 class="text-3xl dark:text-white">Get In Touch!</h1>
 					<p class="text-center text-gray-400 w-4/6">
 						If you want to get in touch or have an idea, get in
 						contact with my and we'll see what we can do together!
@@ -326,17 +329,17 @@
 				<!-- bottom -->
 				<form class="mt-5 p-8 flex flex-col gap-5 items-center">
 					<input
-						class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm"
+						class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm dark:bg-slate-700 dark:ring-0 dark:text-white"
 						type="text"
 						placeholder="Your Name"
 					/>
 					<input
-						class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm"
+						class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm dark:bg-slate-700 dark:ring-0 dark:text-white"
 						type="email"
 						placeholder="Email"
 					/>
 					<textarea
-						class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm"
+						class="p-2 w-full md:w-1/2 ring-1 ring-indigo-300 rounded-sm dark:bg-slate-700 dark:ring-0 dark:text-white"
 						cols="30"
 						rows="10"
 						placeholder="What is on your mind?"

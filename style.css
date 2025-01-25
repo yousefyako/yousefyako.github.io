@@ -15,7 +15,3 @@
 	/* Define custom fonts */
 	--font-nunito: "Nunito", sans-serif;
 }
-
-.dark {
-	filter: invert(1);
-}
